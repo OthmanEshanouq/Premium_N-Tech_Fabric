@@ -116,6 +116,7 @@ label:focus {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 2rem;
 }
 
 .brand-link {
@@ -136,7 +137,8 @@ label:focus {
     display: flex;
     align-items: center;
     gap: 2rem;
-    margin-left: 2rem;
+    margin-left: 1rem;
+    flex: 1;
 }
 
 .nav-link {
@@ -167,6 +169,58 @@ label:focus {
     width: 100%;
 }
 
+/* Search Form */
+.search-form {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-right: 0.5rem;
+    order: 2;
+}
+
+.search-input {
+    padding: 0.5rem 2.5rem 0.5rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    font-size: 0.9rem;
+    width: 200px;
+    transition: var(--transition);
+    background-color: var(--secondary-color);
+}
+
+.search-input:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+    border-color: var(--primary-color);
+    width: 250px;
+}
+
+.search-input::placeholder {
+    color: var(--text-light);
+}
+
+.search-submit-btn {
+    position: absolute;
+    right: 5px;
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0.3rem;
+    transition: var(--transition);
+    border-radius: 50%;
+}
+
+.search-submit-btn:hover {
+    transform: scale(1.1);
+    background-color: var(--bg-light);
+}
+
+.search-submit-btn:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
 .search-btn {
     background: none;
     border: none;
@@ -186,12 +240,13 @@ label:focus {
 }
 
 .hamburger {
-    display: none;
+    display: flex;
     flex-direction: column;
     cursor: pointer;
     gap: 5px;
     padding: 0.5rem;
-    margin-left: auto;
+    order: 3;
+    margin-left: 0;
 }
 
 .hamburger span {
@@ -232,6 +287,55 @@ label:focus {
 
 .menu-toggle:checked ~ .hamburger span:nth-child(3) {
     transform: rotate(-45deg) translate(7px, -7px);
+}
+
+.mobile-search-form {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--border-color);
+    gap: 0.5rem;
+}
+
+.mobile-search-input {
+    flex: 1;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    font-size: inherit;
+    font-weight: 500;
+    background: none;
+    color: var(--text-color);
+}
+
+.mobile-search-input:focus {
+    outline: none;
+    border: none;
+}
+
+.mobile-search-input::placeholder {
+    color: var(--text-light);
+}
+
+.mobile-search-submit-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: var(--transition);
+    flex-shrink: 0;
+    color: var(--text-color);
+}
+
+.mobile-search-submit-btn:hover {
+    color: var(--primary-color);
+    transform: scale(1.1);
+}
+
+.mobile-search-submit-btn:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
 }
 
 .mobile-nav-link {
@@ -419,20 +523,6 @@ label:focus {
     box-shadow: none;
 }
 
-.slide-image-name {
-    display: none;
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(0, 0, 0, 0.8);
-    color: var(--secondary-color);
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    z-index: 5;
-}
 
 .slider-btn {
     position: absolute;
@@ -697,11 +787,144 @@ label:focus {
     padding: 0 2rem;
 }
 
-.reviews-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+/* Reviews Slider */
+.reviews-slider-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
     margin-bottom: 3rem;
+    min-height: 300px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.review-radio {
+    display: none;
+}
+
+.reviews-wrapper {
+    display: flex;
+    width: 600%;
+    transition: transform 0.5s ease;
+    align-items: stretch;
+    gap: 2rem;
+}
+
+#review1:checked ~ .reviews-wrapper {
+    transform: translateX(0);
+}
+
+#review2:checked ~ .reviews-wrapper {
+    transform: translateX(-16.67%);
+}
+
+#review3:checked ~ .reviews-wrapper {
+    transform: translateX(-33.33%);
+}
+
+#review4:checked ~ .reviews-wrapper {
+    transform: translateX(-50%);
+}
+
+#review5:checked ~ .reviews-wrapper {
+    transform: translateX(-66.67%);
+}
+
+#review6:checked ~ .reviews-wrapper {
+    transform: translateX(-83.33%);
+}
+
+#review7:checked ~ .reviews-wrapper {
+    transform: translateX(-100%);
+}
+
+#review8:checked ~ .reviews-wrapper {
+    transform: translateX(-116.67%);
+}
+
+#review9:checked ~ .reviews-wrapper {
+    transform: translateX(-133.33%);
+}
+
+#review10:checked ~ .reviews-wrapper {
+    transform: translateX(-150%);
+}
+
+#review11:checked ~ .reviews-wrapper {
+    transform: translateX(-166.67%);
+}
+
+.reviews-wrapper .review-card {
+    width: calc(8.33% - 1rem);
+    flex-shrink: 0;
+    margin: 0;
+    padding: 2rem;
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: auto;
+    box-sizing: border-box;
+    min-height: 250px;
+}
+
+.review-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: var(--secondary-color);
+    width: 50px;
+    height: 50px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: var(--transition);
+    z-index: 10;
+}
+
+.review-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.review-btn.prev {
+    left: 20px;
+}
+
+.review-btn.next {
+    right: 20px;
+}
+
+/* Show appropriate prev/next buttons based on active review */
+#review1:checked ~ .review1-prev,
+#review1:checked ~ .review1-next,
+#review2:checked ~ .review2-prev,
+#review2:checked ~ .review2-next,
+#review3:checked ~ .review3-prev,
+#review3:checked ~ .review3-next,
+#review4:checked ~ .review4-prev,
+#review4:checked ~ .review4-next,
+#review5:checked ~ .review5-prev,
+#review5:checked ~ .review5-next,
+#review6:checked ~ .review6-prev,
+#review6:checked ~ .review6-next,
+#review7:checked ~ .review7-prev,
+#review7:checked ~ .review7-next,
+#review8:checked ~ .review8-prev,
+#review8:checked ~ .review8-next,
+#review9:checked ~ .review9-prev,
+#review9:checked ~ .review9-next,
+#review10:checked ~ .review10-prev,
+#review10:checked ~ .review10-next,
+#review11:checked ~ .review11-prev,
+#review11:checked ~ .review11-next {
+    display: flex;
 }
 
 .review-card {
@@ -710,6 +933,11 @@ label:focus {
     border-radius: 10px;
     box-shadow: var(--shadow);
     transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 250px;
+    width: 100%;
 }
 
 .review-card:hover {
@@ -743,17 +971,16 @@ label:focus {
     color: var(--text-light);
     line-height: 1.8;
     margin-bottom: 1rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
-.praise-note {
-    background-color: rgba(255, 165, 0, 0.1);
-    padding: 0.75rem;
-    border-radius: 5px;
-    font-size: 0.9rem;
-    color: #cc8500;
-    font-style: italic;
-    margin-top: 1rem;
+.review-text p {
+    margin: 0;
 }
+
 
 .reviews-insight {
     background-color: var(--bg-light);
@@ -810,6 +1037,10 @@ label:focus {
         display: none;
     }
 
+    .search-form {
+        display: none;
+    }
+
     .hamburger {
         display: flex;
     }
@@ -857,13 +1088,6 @@ label:focus {
         height: 300px;
     }
 
-    .slide-image-name {
-        display: block;
-        bottom: 10px;
-        font-size: 0.8rem;
-        padding: 0.4rem 0.8rem;
-    }
-
     .slider-btn {
         width: 40px;
         height: 40px;
@@ -890,8 +1114,14 @@ label:focus {
         grid-template-columns: 1fr;
     }
 
-    .reviews-container {
-        grid-template-columns: 1fr;
+    .reviews-wrapper .review-card {
+        width: 9.09%;
+    }
+
+    .review-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
     }
 
     .footer-content {
