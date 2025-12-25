@@ -803,9 +803,29 @@ label:focus {
     box-shadow: var(--shadow-hover);
 }
 
+.feature-card-printable {
+    padding: 3.5rem;
+    display: flex;
+    margin-bottom: 0rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
 .feature-icon {
-    font-size: 3rem;
+    font-size: 2.5rem;
     margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.feature-icon-img {
+    width: 3rem;
+    height: 3rem;
+    object-fit: contain;
+    display: block;
+    margin: 0;
 }
 
 .feature-card:first-child .feature-icon {
@@ -858,7 +878,7 @@ label:focus {
 
 .reviews-wrapper {
     display: flex;
-    width: 600%;
+    width: 1100%;
     transition: transform 0.5s ease;
     align-items: stretch;
 }
@@ -868,49 +888,49 @@ label:focus {
 }
 
 #review2:checked ~ .reviews-slider-container .reviews-wrapper {
-    transform: translateX(-16.67%);
+    transform: translateX(-9.09%);
 }
 
 #review3:checked ~ .reviews-slider-container .reviews-wrapper {
-    transform: translateX(-33.33%);
+    transform: translateX(-18.18%);
 }
 
 #review4:checked ~ .reviews-slider-container .reviews-wrapper {
-    transform: translateX(-50%);
+    transform: translateX(-27.27%);
 }
 
 #review5:checked ~ .reviews-slider-container .reviews-wrapper {
-    transform: translateX(-66.67%);
+    transform: translateX(-36.36%);
 }
 
 #review6:checked ~ .reviews-slider-container .reviews-wrapper {
-    transform: translateX(-83.33%);
+    transform: translateX(-45.45%);
 }
 
 #review7:checked ~ .reviews-slider-container .reviews-wrapper {
-    transform: translateX(-100%);
+    transform: translateX(-54.54%);
 }
 
 #review8:checked ~ .reviews-slider-container .reviews-wrapper {
-    transform: translateX(-116.67%);
+    transform: translateX(-63.63%);
 }
 
 #review9:checked ~ .reviews-slider-container .reviews-wrapper {
-    transform: translateX(-133.33%);
+    transform: translateX(-72.72%);
 }
 
 #review10:checked ~ .reviews-slider-container .reviews-wrapper {
-    transform: translateX(-150%);
+    transform: translateX(-81.81%);
 }
 
 #review11:checked ~ .reviews-slider-container .reviews-wrapper {
-    transform: translateX(-166.67%);
+    transform: translateX(-90.90%);
 }
 
 .reviews-wrapper .review-card {
-    width: calc(8.33% - 1rem);
+    width: 9.09%;
     flex-shrink: 0;
-    margin-right: 2rem;
+    margin-right: 0;
     padding: 2rem;
     background-color: var(--secondary-color);
     border-radius: 10px;
@@ -921,10 +941,6 @@ label:focus {
     height: auto;
     box-sizing: border-box;
     min-height: 250px;
-}
-
-.reviews-wrapper .review-card:last-child {
-    margin-right: 0;
 }
 
 .review-btn {
