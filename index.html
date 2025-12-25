@@ -26,15 +26,21 @@
             <nav class="desktop-nav" aria-label="Main navigation">
                 <a href="#top" class="nav-link" aria-label="Go to home page" title="Home">Home</a>
                 <a href="#product" class="nav-link" aria-label="View product details" title="Product">Product</a>
-                <a href="#cart" class="nav-link" aria-label="View shopping cart" title="Shopping Cart">Cart</a>
-                <a href="#account" class="nav-link" aria-label="Access my account" title="My Account">My Account</a>
             </nav>
 
-            <!-- Search Form -->
-            <form class="search-form" role="search" aria-label="Site search">
-                <input type="search" id="search-input" class="search-input" placeholder="Search..." aria-label="Search products" title="Type to search for products">
-                <button type="submit" class="search-submit-btn" aria-label="Submit search">🔍</button>
-            </form>
+            <!-- Search Form with Icons -->
+            <div class="search-icons-container">
+                <form class="search-form" role="search" aria-label="Site search">
+                    <input type="search" id="search-input" class="search-input" placeholder="Search..." aria-label="Search products" title="Type to search for products">
+                    <button type="submit" class="search-submit-btn" aria-label="Submit search">🔍</button>
+                </form>
+                <a href="#cart" class="icon-link" aria-label="View shopping cart" title="Shopping Cart">
+                    <img src="assets/shopping-cart.png" alt="Shopping cart icon" class="icon-img">
+                </a>
+                <a href="#account" class="icon-link" aria-label="Access my account" title="My Account">
+                    <img src="assets/profile.png" alt="My account icon" class="icon-img">
+                </a>
+            </div>
 
             <!-- Hamburger Menu Toggle -->
             <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
@@ -54,8 +60,12 @@
                 <a href="#product" class="mobile-nav-link" aria-label="Browse men's products" title="Men's Collection">Men</a>
                 <a href="#product" class="mobile-nav-link" aria-label="Browse women's products" title="Women's Collection">Women</a>
                 <a href="#product" class="mobile-nav-link" aria-label="Browse unisex products" title="Unisex Collection">Unisex</a>
-                <a href="#cart" class="mobile-nav-link" aria-label="View shopping cart" title="Shopping Cart">🛒 Cart</a>
-                <a href="#account" class="mobile-nav-link" aria-label="Access my account" title="My Account">👤 My Account</a>
+                <a href="#cart" class="mobile-nav-link" aria-label="View shopping cart" title="Shopping Cart">
+                    <img src="assets/shopping-cart.png" alt="Shopping cart icon" class="mobile-icon-img"> Cart
+                </a>
+                <a href="#account" class="mobile-nav-link" aria-label="Access my account" title="My Account">
+                    <img src="assets/profile.png" alt="My account icon" class="mobile-icon-img"> My Account
+                </a>
             </nav>
         </div>
     </header>
@@ -130,7 +140,7 @@
                     </div>
                     <div class="slide slide8">
                         <img src="assets/images/running.png" 
-                             alt="Black N-Tech T-shirt during running activity showing breathability and comfort" 
+                             alt="Black N-Tech T-shirt during running activity showing breathable fabric and comfort" 
                              title="Black N-Tech T-shirt Running Activity"
                              class="slide-image">
                     </div>
@@ -201,8 +211,8 @@
                 <p class="product-name-mobile" aria-hidden="true">N-Tech Premium T-Shirt - Black</p>
                 
                 <div class="product-price-action">
-                    <span class="product-price" aria-label="Price: 49 dollars and 99 cents">$49.99</span>
-                    <button type="button" class="add-to-bag-btn" aria-label="Add N-Tech Premium T-Shirt to shopping bag" title="Add to Shopping Bag">Add to Bag</button>
+                    <span class="product-price" aria-label="Price: 34 JOD and 99 cents">34.99 JOD</span>
+                    <button type="button" class="add-to-bag-btn" aria-label="Buy N-Tech Premium T-Shirt now" title="Buy Now (the delivery will be in 2 business days)">Buy Now</button>
                 </div>
 
                 <!-- Size Selector -->
@@ -277,7 +287,7 @@
             <article class="feature-card" role="listitem">
                 <div class="feature-icon" aria-hidden="true">💪</div>
                 <h3 class="feature-title">Durable & Breathable</h3>
-                <p class="feature-text">Built to last with superior breathability for maximum comfort.</p>
+                <p class="feature-text">Built to last with superior breathable fabric for maximum comfort.</p>
             </article>
         </div>
     </section>
@@ -286,7 +296,7 @@
     <section class="reviews" aria-label="Customer reviews">
         <h2 class="section-title">What Customers Say</h2>
         
-        <div class="reviews-slider-container">
+        <div class="reviews-slider-wrapper">
             <input type="radio" name="review-slider" id="review1" class="review-radio" checked>
             <input type="radio" name="review-slider" id="review2" class="review-radio">
             <input type="radio" name="review-slider" id="review3" class="review-radio">
@@ -299,7 +309,30 @@
             <input type="radio" name="review-slider" id="review10" class="review-radio">
             <input type="radio" name="review-slider" id="review11" class="review-radio">
             
-            <div class="reviews-wrapper" role="list">
+            <label for="review1" class="review-btn prev review2-prev" aria-label="Previous review">‹</label>
+            <label for="review2" class="review-btn prev review3-prev" aria-label="Previous review">‹</label>
+            <label for="review3" class="review-btn prev review4-prev" aria-label="Previous review">‹</label>
+            <label for="review4" class="review-btn prev review5-prev" aria-label="Previous review">‹</label>
+            <label for="review5" class="review-btn prev review6-prev" aria-label="Previous review">‹</label>
+            <label for="review6" class="review-btn prev review7-prev" aria-label="Previous review">‹</label>
+            <label for="review7" class="review-btn prev review8-prev" aria-label="Previous review">‹</label>
+            <label for="review8" class="review-btn prev review9-prev" aria-label="Previous review">‹</label>
+            <label for="review9" class="review-btn prev review10-prev" aria-label="Previous review">‹</label>
+            <label for="review10" class="review-btn prev review11-prev" aria-label="Previous review">‹</label>
+            
+            <label for="review2" class="review-btn next review1-next" aria-label="Next review">›</label>
+            <label for="review3" class="review-btn next review2-next" aria-label="Next review">›</label>
+            <label for="review4" class="review-btn next review3-next" aria-label="Next review">›</label>
+            <label for="review5" class="review-btn next review4-next" aria-label="Next review">›</label>
+            <label for="review6" class="review-btn next review5-next" aria-label="Next review">›</label>
+            <label for="review7" class="review-btn next review6-next" aria-label="Next review">›</label>
+            <label for="review8" class="review-btn next review7-next" aria-label="Next review">›</label>
+            <label for="review9" class="review-btn next review8-next" aria-label="Next review">›</label>
+            <label for="review10" class="review-btn next review9-next" aria-label="Next review">›</label>
+            <label for="review11" class="review-btn next review10-next" aria-label="Next review">›</label>
+            
+            <div class="reviews-slider-container">
+                <div class="reviews-wrapper" role="list">
             <article class="review-card positive" role="listitem">
                 <div class="review-header">
                     <span class="review-name" aria-label="Review by Sarah M.">Sarah M.</span>
@@ -409,32 +442,8 @@
                     <p>"Excellent quality! The material is soft, the fit is perfect, and it maintains its shape after multiple washes. Couldn't be happier!"</p>
                 </blockquote>
             </article>
+                </div>
             </div>
-
-            <!-- Review Navigation Buttons -->
-            <label for="review11" class="review-btn prev review1-prev" aria-label="Previous review">‹</label>
-            <label for="review1" class="review-btn prev review2-prev" aria-label="Previous review">‹</label>
-            <label for="review2" class="review-btn prev review3-prev" aria-label="Previous review">‹</label>
-            <label for="review3" class="review-btn prev review4-prev" aria-label="Previous review">‹</label>
-            <label for="review4" class="review-btn prev review5-prev" aria-label="Previous review">‹</label>
-            <label for="review5" class="review-btn prev review6-prev" aria-label="Previous review">‹</label>
-            <label for="review6" class="review-btn prev review7-prev" aria-label="Previous review">‹</label>
-            <label for="review7" class="review-btn prev review8-prev" aria-label="Previous review">‹</label>
-            <label for="review8" class="review-btn prev review9-prev" aria-label="Previous review">‹</label>
-            <label for="review9" class="review-btn prev review10-prev" aria-label="Previous review">‹</label>
-            <label for="review10" class="review-btn prev review11-prev" aria-label="Previous review">‹</label>
-            
-            <label for="review2" class="review-btn next review1-next" aria-label="Next review">›</label>
-            <label for="review3" class="review-btn next review2-next" aria-label="Next review">›</label>
-            <label for="review4" class="review-btn next review3-next" aria-label="Next review">›</label>
-            <label for="review5" class="review-btn next review4-next" aria-label="Next review">›</label>
-            <label for="review6" class="review-btn next review5-next" aria-label="Next review">›</label>
-            <label for="review7" class="review-btn next review6-next" aria-label="Next review">›</label>
-            <label for="review8" class="review-btn next review7-next" aria-label="Next review">›</label>
-            <label for="review9" class="review-btn next review8-next" aria-label="Next review">›</label>
-            <label for="review10" class="review-btn next review9-next" aria-label="Next review">›</label>
-            <label for="review11" class="review-btn next review10-next" aria-label="Next review">›</label>
-            <label for="review1" class="review-btn next review11-next" aria-label="Next review">›</label>
         </div>
 
     </section>
@@ -443,7 +452,7 @@
     <footer class="footer" role="contentinfo">
         <div class="footer-content">
             <p class="footer-brand" aria-label="N-Tech brand name">N-Tech</p>
-            <p class="footer-copyright">&copy; 2024 N-Tech. All rights reserved.</p>
+            <p class="footer-copyright">&copy; 2025 N-Tech. All rights reserved.</p>
         </div>
     </footer>
 

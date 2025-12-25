@@ -169,13 +169,20 @@ label:focus {
     width: 100%;
 }
 
+/* Search Form with Icons Container */
+.search-icons-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    order: 2;
+}
+
 /* Search Form */
 .search-form {
     display: flex;
     align-items: center;
     position: relative;
-    margin-right: 0.5rem;
-    order: 2;
+    margin-right: 0;
 }
 
 .search-input {
@@ -221,6 +228,39 @@ label:focus {
     outline-offset: 2px;
 }
 
+/* Icon Links (Cart & Account) */
+.icon-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    text-decoration: none;
+    border-radius: 50%;
+    transition: var(--transition);
+    background-color: transparent;
+}
+
+.icon-link:hover {
+    background-color: var(--bg-light);
+    transform: scale(1.1);
+    color: var(--primary-color);
+}
+
+.icon-link:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+.icon-img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    transition: var(--transition);
+}
+
 .search-btn {
     background: none;
     border: none;
@@ -240,7 +280,7 @@ label:focus {
 }
 
 .hamburger {
-    display: flex;
+    display: none;
     flex-direction: column;
     cursor: pointer;
     gap: 5px;
@@ -345,12 +385,20 @@ label:focus {
     padding: 0.75rem;
     border-bottom: 1px solid var(--border-color);
     transition: var(--transition);
-    display: block;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .mobile-nav-link:hover {
     color: var(--primary-color);
     padding-left: 1rem;
+}
+
+.mobile-icon-img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
 }
 
 /* ============================================
@@ -361,7 +409,10 @@ label:focus {
     width: 100%;
     height: 70vh;
     min-height: 500px;
-    background: linear-gradient(135deg, #1a1a1a 0%, #000000 100%);
+    background-image: url('assets/the fabric material.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     position: relative;
     display: flex;
     align-items: center;
@@ -376,10 +427,8 @@ label:focus {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: 
-        radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
-    animation: heroPulse 8s ease-in-out infinite;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 0;
 }
 
 @keyframes heroPulse {
@@ -556,7 +605,7 @@ label:focus {
 }
 
 /* Show appropriate prev/next buttons based on active slide */
-#slide1:checked ~ .slide1-prev,
+/* Hide prev arrow on first slide, hide next arrow on last slide */
 #slide1:checked ~ .slide1-next,
 #slide2:checked ~ .slide2-prev,
 #slide2:checked ~ .slide2-next,
@@ -576,8 +625,7 @@ label:focus {
 #slide9:checked ~ .slide9-next,
 #slide10:checked ~ .slide10-prev,
 #slide10:checked ~ .slide10-next,
-#slide11:checked ~ .slide11-prev,
-#slide11:checked ~ .slide11-next {
+#slide11:checked ~ .slide11-prev {
     display: flex;
 }
 
@@ -677,6 +725,7 @@ label:focus {
     align-items: center;
     gap: 1rem;
     flex-wrap: wrap;
+    border: none;
 }
 
 .size-label {
@@ -694,7 +743,7 @@ label:focus {
     height: 50px;
     line-height: 50px;
     text-align: center;
-    border: 2px solid var(--border-color);
+    border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: var(--transition);
@@ -702,14 +751,12 @@ label:focus {
 }
 
 .size-label-btn:hover {
-    border-color: var(--primary-color);
     background-color: var(--bg-light);
 }
 
 .size-radio:checked + .size-label-btn {
     background-color: var(--primary-color);
     color: var(--secondary-color);
-    border-color: var(--primary-color);
 }
 
 .product-color {
@@ -788,11 +835,18 @@ label:focus {
 }
 
 /* Reviews Slider */
+.reviews-slider-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
 .reviews-slider-container {
     position: relative;
     width: 100%;
     overflow: hidden;
-    margin-bottom: 3rem;
     min-height: 300px;
     padding: 0;
     box-sizing: border-box;
@@ -807,57 +861,56 @@ label:focus {
     width: 600%;
     transition: transform 0.5s ease;
     align-items: stretch;
-    gap: 2rem;
 }
 
-#review1:checked ~ .reviews-wrapper {
+#review1:checked ~ .reviews-slider-container .reviews-wrapper {
     transform: translateX(0);
 }
 
-#review2:checked ~ .reviews-wrapper {
+#review2:checked ~ .reviews-slider-container .reviews-wrapper {
     transform: translateX(-16.67%);
 }
 
-#review3:checked ~ .reviews-wrapper {
+#review3:checked ~ .reviews-slider-container .reviews-wrapper {
     transform: translateX(-33.33%);
 }
 
-#review4:checked ~ .reviews-wrapper {
+#review4:checked ~ .reviews-slider-container .reviews-wrapper {
     transform: translateX(-50%);
 }
 
-#review5:checked ~ .reviews-wrapper {
+#review5:checked ~ .reviews-slider-container .reviews-wrapper {
     transform: translateX(-66.67%);
 }
 
-#review6:checked ~ .reviews-wrapper {
+#review6:checked ~ .reviews-slider-container .reviews-wrapper {
     transform: translateX(-83.33%);
 }
 
-#review7:checked ~ .reviews-wrapper {
+#review7:checked ~ .reviews-slider-container .reviews-wrapper {
     transform: translateX(-100%);
 }
 
-#review8:checked ~ .reviews-wrapper {
+#review8:checked ~ .reviews-slider-container .reviews-wrapper {
     transform: translateX(-116.67%);
 }
 
-#review9:checked ~ .reviews-wrapper {
+#review9:checked ~ .reviews-slider-container .reviews-wrapper {
     transform: translateX(-133.33%);
 }
 
-#review10:checked ~ .reviews-wrapper {
+#review10:checked ~ .reviews-slider-container .reviews-wrapper {
     transform: translateX(-150%);
 }
 
-#review11:checked ~ .reviews-wrapper {
+#review11:checked ~ .reviews-slider-container .reviews-wrapper {
     transform: translateX(-166.67%);
 }
 
 .reviews-wrapper .review-card {
     width: calc(8.33% - 1rem);
     flex-shrink: 0;
-    margin: 0;
+    margin-right: 2rem;
     padding: 2rem;
     background-color: var(--secondary-color);
     border-radius: 10px;
@@ -870,10 +923,11 @@ label:focus {
     min-height: 250px;
 }
 
+.reviews-wrapper .review-card:last-child {
+    margin-right: 0;
+}
+
 .review-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
     background-color: rgba(0, 0, 0, 0.5);
     color: var(--secondary-color);
     width: 50px;
@@ -885,24 +939,24 @@ label:focus {
     cursor: pointer;
     border-radius: 50%;
     transition: var(--transition);
-    z-index: 10;
+    flex-shrink: 0;
 }
 
 .review-btn:hover {
     background-color: rgba(0, 0, 0, 0.8);
-    transform: translateY(-50%) scale(1.1);
+    transform: scale(1.1);
 }
 
 .review-btn.prev {
-    left: 20px;
+    order: -1;
 }
 
 .review-btn.next {
-    right: 20px;
+    order: 1;
 }
 
 /* Show appropriate prev/next buttons based on active review */
-#review1:checked ~ .review1-prev,
+/* Hide prev arrow on first review, hide next arrow on last review */
 #review1:checked ~ .review1-next,
 #review2:checked ~ .review2-prev,
 #review2:checked ~ .review2-next,
@@ -922,8 +976,7 @@ label:focus {
 #review9:checked ~ .review9-next,
 #review10:checked ~ .review10-prev,
 #review10:checked ~ .review10-next,
-#review11:checked ~ .review11-prev,
-#review11:checked ~ .review11-next {
+#review11:checked ~ .review11-prev {
     display: flex;
 }
 
@@ -946,8 +999,8 @@ label:focus {
 }
 
 .review-card.indirect-praise {
-    border-left: 4px solid #ffa500;
-    background-color: #fff9e6;
+    border-left: none;
+    background-color: var(--secondary-color);
 }
 
 .review-header {
@@ -1037,7 +1090,7 @@ label:focus {
         display: none;
     }
 
-    .search-form {
+    .search-icons-container {
         display: none;
     }
 
